@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "car")
-public class Car  {
+public class Car {
 
     @OneToOne(mappedBy = "car")
     private User user;
@@ -18,10 +18,12 @@ public class Car  {
     private String model;
     @Column(name = "series")
     private int series;
+
     public Car(String model, int series) {
         this.model = model;
         this.series = series;
     }
+
     public Car() {
     }
 
@@ -32,15 +34,19 @@ public class Car  {
     public String getModel() {
         return model;
     }
+
     public void setModel(String model) {
         this.model = model;
     }
+
     public int getSeries() {
         return series;
     }
+
     public void setSeries(int series) {
         this.series = series;
     }
+
     @Override
     public String toString() {
         return "Car{" +
@@ -49,5 +55,4 @@ public class Car  {
                 ", series=" + series +
                 '}';
     }
-
 }
